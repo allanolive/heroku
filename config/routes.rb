@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # route for patients that i created
   get '/patients' => 'patients#index'
+  get '/ingredients' => 'ingredients#index'
+
+  # route for SHOW each book
 end
