@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post '/sign-in' => 'users#signin'
   delete '/sign-out' => 'users#signout'
   patch '/change-password' => 'users#changepw'
+
+  # route for patients that i created
+  get '/patients' => 'patients#index'
 end
