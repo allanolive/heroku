@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get '/patients/:id' => 'patients#show'
   get '/ingredients/:id' => 'ingredients#show'
   post '/patients/' => 'patients#create'
+  post '/ingredients' => 'ingredients#create'
 end
