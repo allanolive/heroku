@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/ingredients' => 'ingredients#index'
 
   # route for SHOW each book
-  get 'patients/:id' => 'patients#show'
-  get 'ingredients/:id' => 'ingredients#show'
+  get '/patients/:id' => 'patients#show'
+  get '/ingredients/:id' => 'ingredients#show'
+  post '/patients/' => 'patients#create'
 end
