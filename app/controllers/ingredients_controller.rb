@@ -1,4 +1,7 @@
 class IngredientsController < ApplicationController
+
+  before_action :set_book, only: %i[show update destroy]
+
   def index
     @ingredients = Ingredient.all
     render json: @ingredients
@@ -23,4 +26,19 @@ class IngredientsController < ApplicationController
     params.require(:ingredient).permit(:name, :unit)
   end
 
+  def update
+    @ingredient = Ingredient.find(params[:id])
+
+    if @ingredient.update(ingredient_params)
+      render json: @ingredient, status: :created
+    else
+      render json: @ingredient.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @ingredient = Ingredient.find(params[:id])
+
+    @ingredient.destroy
+  end
 end

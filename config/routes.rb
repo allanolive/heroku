@@ -11,13 +11,16 @@ Rails.application.routes.draw do
   patch '/change-password' => 'users#changepw'
 
   # route for patients that i created
-  get '/patients' => 'patients#index'
-  get '/ingredients' => 'ingredients#index'
+  # get '/patients' => 'patients#index'
+  # get '/ingredients' => 'ingredients#index'
 
   # route for SHOW each book
-  get '/patients/:id' => 'patients#show'
-  get '/ingredients/:id' => 'ingredients#show'
-  post '/patients/' => 'patients#create'
-  post '/ingredients' => 'ingredients#create'
-  patch '/patients' => 'patients#create'
+  resources :patients, except: %i[new edit]
+  # get '/patients/:id' => 'patients#show'
+  # get '/ingredients/:id' => 'ingredients#show'
+  # post '/patients/' => 'patients#create'
+  # post '/ingredients' => 'ingredients#create'
+  # patch '/patients/:id' => 'patients#update'
+  # patch '/ingredients/:id' => 'ingredients#update'
+  # delete '/patients/:id'
 end
