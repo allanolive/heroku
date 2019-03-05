@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :recipes, except: %i[new edit]
 
   resources :patients, except: %i[new edit]
+
+  resources :ingredients, except: %i[new edit]
   # route for patients that i created
   # get '/patients' => 'patients#index'
   # get '/ingredients' => 'ingredients#index'
